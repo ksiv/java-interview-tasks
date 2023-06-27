@@ -10,4 +10,12 @@ public class paramChecker {
         }
         return true;
     }
+    public static boolean isStringLongValue(String str){
+        try {
+            Long.parseLong(str);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+        return true;
+    }
 }
