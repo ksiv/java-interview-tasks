@@ -1,0 +1,100 @@
+package interviewtasks;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * \interviewtasks> java -classpath ".."  interviewtasks.anagram "asds", "ssda"
+ * <p>
+ * <p>
+ * According to wikipedia "An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once"
+ * And "A word is a basic element of language that carries an objective or practical meaning"
+ * Test tasks on interview in most cases exclude "carries an objective or practical meaning" part.
+ * So "test" and "ttse" would be an anagram :-) As for this task the idea to show the approach
+ * and meaningless words in latin alphabet would do
+ */
+
+public class anagram {
+    static String firstString;
+    static String secondString;
+
+    public static void main(String[] args) {
+        String helpMessage = "two strings is expected as an input";
+        if (args.length != 2) {
+            System.out.println("wrong argument count");
+            System.out.println(helpMessage);
+            return;
+        } else {
+            firstString = args[0];
+            secondString = args[1];
+            System.out.println(firstString + "_AND_" + secondString);
+            System.out.println(isAnagramViaArraySorting());
+            System.out.println(isAnagramViaSymbolCounters());
+
+        }
+    }
+
+    // Compare sorted arrays
+    // Simple but could demand much RAM for big strings
+    // Sorting also CPU intensive task
+    private static boolean isAnagramViaArraySorting() {
+
+        // Diff length strings can not be anagram
+        if (firstString.length() != secondString.length()) {
+            return false;
+        }
+        // Strings to arrays
+        char[] firstChars = firstString.toCharArray();
+        char[] secondChars = secondString.toCharArray();
+        // Sort arrays
+        Arrays.sort(firstChars);
+        Arrays.sort(secondChars);
+        System.out.println(Arrays.toString(firstChars));
+        System.out.println(Arrays.toString(secondChars));
+        // Compare arrays
+        if (Arrays.equals(firstChars, secondChars)) {
+            return true;
+        }
+        return false;
+
+    }
+
+    // Index char frequency
+    // Rise counters for encounters in the first string and Lower for second one
+    // For an anagram the index must be empty by the end
+    private static boolean isAnagramViaSymbolCounters() {
+
+        // Diff length strings can not be anagram
+        if (firstString.length() != secondString.length()) {
+            return false;
+        }
+
+        Map<Character, Integer> symbolFrequency = new HashMap<>();
+        char tmpChar;
+        // Increasing counter of every symbol on a map
+        for (int i = firstString.length() - 1; i >= 0; i--) {
+            tmpChar = firstString.charAt(i);
+            symbolFrequency.put(tmpChar, symbolFrequency.getOrDefault(tmpChar, 0) + 1);
+        }
+        // Decreasing counter of every symbol on a map, removing ones that reach zero
+        for (int i = secondString.length() - 1; i >= 0; i--) {
+            tmpChar = secondString.charAt(i);
+            
+            if (!symbolFrequency.containsKey(tmpChar)) {
+                return false;
+            }
+
+            symbolFrequency.put(tmpChar, symbolFrequency.get(tmpChar) - 1);
+
+            if (symbolFrequency.get(tmpChar) == 0) {
+                symbolFrequency.remove(tmpChar);
+            }
+        }
+        // check if Map is empty
+
+        return symbolFrequency.isEmpty();
+
+    }
+
+}
