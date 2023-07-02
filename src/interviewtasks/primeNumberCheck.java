@@ -47,6 +47,8 @@ public class primeNumberCheck {
             // This will loop odd numbers from 3 to int(sqrt(x))
             // Some smart guy has found it out that there is no need to check
             // any values bigger than sqrt of a number
+            // There are room for perfection like excluding divisors which are products of 3 and 5
+            // but it requires an in-depth research of the costs of such checks
             long numberToCheckSquareRoot = (long) Math.sqrt(numberToCheck);
             while (i <= numberToCheckSquareRoot) {
                 i += 2; // Removes all even divisors
