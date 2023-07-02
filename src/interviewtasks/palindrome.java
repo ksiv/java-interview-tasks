@@ -70,6 +70,7 @@ public class palindrome {
         String reversedHalfString = "";
 
         boolean retVal = false;
+        // Half string plus one symbol to check even and odd length words
         int halfStringLength = (str.length()/2)+1;
         String halfString = str.substring(0,halfStringLength);
         for (int i = (str.length()-1); i >= halfStringLength-1; i--) {

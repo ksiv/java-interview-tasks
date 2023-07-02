@@ -12,7 +12,7 @@ import java.util.Map;
  * And "A word is a basic element of language that carries an objective or practical meaning"
  * Test tasks on interview in most cases exclude "carries an objective or practical meaning" part.
  * So "test" and "ttse" would be an anagram :-) As for this task the idea to show the approach
- * and meaningless words in latin alphabet would do
+ * and meaningless words in latin alphabet would do.
  */
 
 public class anagram {
@@ -60,8 +60,8 @@ public class anagram {
 
     }
 
-    // Index char frequency
-    // Rise counters for encounters in the first string and Lower for second one
+    // Char frequency counters
+    // encounters in the first string and Lower for second one
     // For an anagram the index must be empty by the end
     private static boolean isAnagramViaSymbolCounters() {
 
@@ -69,24 +69,25 @@ public class anagram {
         if (firstString.length() != secondString.length()) {
             return false;
         }
-
+        // Map for counters. if you know the size of your auxiliary you could define  new HashMap<>(26)
         Map<Character, Integer> symbolFrequency = new HashMap<>();
         char tmpChar;
-        // Increasing counter of every symbol on a map
+        // Traverse the first string and rise counters for each symbol
         for (int i = firstString.length() - 1; i >= 0; i--) {
             tmpChar = firstString.charAt(i);
             symbolFrequency.put(tmpChar, symbolFrequency.getOrDefault(tmpChar, 0) + 1);
         }
-        // Decreasing counter of every symbol on a map, removing ones that reach zero
+        // Traverse the second string decreasing counters
         for (int i = secondString.length() - 1; i >= 0; i--) {
             tmpChar = secondString.charAt(i);
-            
+
+            // If the symbol in the map reducing counter otherwise exit(false)
             if (!symbolFrequency.containsKey(tmpChar)) {
                 return false;
+            }else{
+                symbolFrequency.put(tmpChar, symbolFrequency.get(tmpChar) - 1);
             }
-
-            symbolFrequency.put(tmpChar, symbolFrequency.get(tmpChar) - 1);
-
+            // Removing element if same amount of this symbol has been found in both string
             if (symbolFrequency.get(tmpChar) == 0) {
                 symbolFrequency.remove(tmpChar);
             }

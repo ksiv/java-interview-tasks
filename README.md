@@ -1,13 +1,14 @@
 
 # java-interview-tasks
 
-## Simple tasks that one typically asked to perform during job interview
+## Simple tasks that one typically asked to perform during an exam or job interview
 
 
 ## What is this?
 
-This is a set of Java classes one could download, compile and run representing examples of tasks one often given during Job interview or an exam. 
-Also, thanks to this marvelous platform it's easy to read in the browser.
+This is a set of Java classes representing examples of tasks one often given during Job interview or an exam. 
+Also, thanks to this marvelous platform it's easy to read in the browser. 
+My last 15 years in IT I worked mostly in QA so do not expect from this project hardcore level coding.
 
 ## Who might find it useful
 
@@ -16,6 +17,8 @@ This is a matter of chance really. My approach to solve tasks alike is:<br>
 2. to think of my implementations.
 3. to look for other implementations in the net. 
 4. when I have time put in on GitHub for being accessible to other people. 
+
+So in the step 3 I often find interesting solutions, small tricks that simply absent in examples on some respectable sites.
 
 It is mandatory in step 1 in real life project to work on specifications. 
 It's not on interviews or exams but might be handy.
@@ -45,3 +48,8 @@ Win 11 command line example<br>
 Some programs in this set might output time execution for different methods.
 These are very rough measurements and depending on exact piece of code might have not much sense without understanding 
 in case of Java JVM AOT and JIT optimizations. The sample sizes and execution times are also too small to measure correct profile on PC.
+
+All samples successfully compiled in following environment
+openjdk 11.0.12 2021-07-20
+OpenJDK Runtime Environment Microsoft-25199 (build 11.0.12+7)
+OpenJDK 64-Bit Server VM Microsoft-25199 (build 11.0.12+7, mixed mode)
