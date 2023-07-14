@@ -28,7 +28,7 @@ public class uniqueFrequencies{
 
 
     public static boolean isFrequencyUnique(int[] arr) {
-        // in this example we traverse input array in worst case less than two times
+        // in this example we traverse input array once and resulted frequency array in worst case once
         // maybe it is O(n) + O(n)?
         Map<Integer,Integer> frequencyMap = new HashMap<>();
         Map<Integer,Integer> duplcateCheck = new HashMap<>();
