@@ -56,14 +56,6 @@ public class twostacksinonearray {
         }
     }
 
-    static void pushToStack(Boolean isFirstStack, int value) throws Exception {
-        if ((isFirstStack)) {
-            push1(value);
-        } else {
-            push2(value);
-        }
-
-    }
     static void popFromStack(Boolean isFirstStack){
         if ((isFirstStack)) {
             pop1();
