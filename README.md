@@ -9,10 +9,11 @@
 This is a set of Java classes representing examples of tasks one often given during Job interview or an exam. 
 Also, thanks to this marvelous platform it's easy to read in the browser. 
 Every example is a wrapper class which contains all the target logic with minimal import of service functionality.
-So far, I see three types of tasks:
-a) a naive approach to solve the tasks and at least one "improvement" where improvement is supposed to work better in (some/all) cases. This type of task shows some approach to solve a problem and why it's better than the other and that in general why we should seek for different approaches to same problem. 
-b) implement "a" without using "b". In such task you are to implement some solution without using some method or data structure. This task forces you to find the other approach to solve same problem. The approach you have found is not always an improvement in terms of efficiency  but it might have some uses depending on an exact PL and it's limitations.
-c) Just implement something. Such task often imply one solution and the whole idea is to learn or demonstrate the knowledge of some algorithm and your ability to utilize given PL to use this algorithm.
+
+So far, I see three types of tasks:<br>
+1. a naive approach to solve the tasks and at least one "improvement" where improvement is supposed to work better in (some/all) cases. This type of task shows some approach to solve a problem and why it's better than the other and that in general why we should seek for different approaches to same problem. 
+2. implement "a" without using "b". In such task you are to implement some solution without using some method or data structure. This task forces you to find the other approach to solve same problem. The approach you have found is not always an improvement in terms of efficiency  but it might have some uses depending on an exact PL and it's limitations.
+3. Just implement something. Such task often imply one solution and the whole idea is to learn or demonstrate the knowledge of some algorithm and your ability to utilize given PL to use this algorithm.
 
 
 My last 15 years in IT I worked mostly in QA so do not expect from this project hardcore level coding.
