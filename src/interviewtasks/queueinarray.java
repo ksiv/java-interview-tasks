@@ -6,7 +6,7 @@ import java.util.Arrays;
 /**
  * Implementation of FIFO queue in an array
  * ORIGIN: geeksforgeeks.org
- * TAGS: #array
+ * TAGS: #array #RingBuffer
  */
 public class queueinarray {
     int popPointer, pushPointer;
@@ -46,15 +46,14 @@ public class queueinarray {
     }
 
     queueinarray() {
-        arrCap = arr.length - 1;
+        arrCap = arr.length;
         popPointer = 0;
         pushPointer = 0;
         qSize = 0;
     }
 
-    //Function to push an element x in a queue.
-    void push(int x) {
-
+    // Function to push an element x in a queue.
+    public void push(int x) {
         if (qSize < arrCap) {
             arr[pushPointer] = x;
             qSize++;
@@ -62,37 +61,35 @@ public class queueinarray {
         } else {
             System.out.println("Overflow");
         }
-
     }
 
-    //Function to pop an element from queue and return that element.
-    int pop() {
-        if (qSize < arrCap && qSize != 0) {
-            int tmpVal = arr[popPointer];
+    // Function to pop an element from queue and return that element.
+    public int pop() {
+        if (qSize > 0) {
+            int tempVal = arr[popPointer];
             arr[popPointer] = 0;
             qSize--;
             movePopPointer();
-            return tmpVal;
+            return tempVal;
+        } else {
+            System.out.println("Queue is empty");
+            return -1;
         }
-        return -1;
     }
 
-    void movePushPointer() {
-
-        if (pushPointer < arrCap) {
+    private void movePushPointer() {
+        if (pushPointer < arrCap - 1) {
             pushPointer++;
         } else {
             pushPointer = 0;
         }
     }
 
-    void movePopPointer() {
-
-        if (popPointer < arrCap) {
+    private void movePopPointer() {
+        if (popPointer < arrCap - 1) {
             popPointer++;
         } else {
             popPointer = 0;
         }
-
     }
 }
