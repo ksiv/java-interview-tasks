@@ -1,6 +1,8 @@
 package interviewtasks;
 
+
 import java.util.Locale;
+
 
 /**
  * Given string str, find the length of the longest repeating subsequence such that it can be found twice in the given string.
@@ -13,26 +15,27 @@ import java.util.Locale;
  *
  */
 
+// LRS is a subset of LCS where LS is being searched inside one word
 
-public class lcs {
+public class lrs {
     public static void main(String[] args) {
-        String helpMessage = "one strings is expected as a parameter e.g. \"ameyamedozp\"";
+        String helpMessage = "a strings is expected as a parameter e.g. \"ameyame\", beware long input";
         String str;
         if (args.length != 1) {
             System.out.println("wrong argument count");
             System.out.println(helpMessage);
-            return;
 
         } else {
             str = args[0].toLowerCase(Locale.ROOT);
 
             System.out.println("String >>" + str + "<<");
-            int result = longestRepeatingSubsequence(str);
-            System.out.println("Length of LCS is " + result);
+
+            System.out.println("Length of LCS(Memoization) is " + lcs1(str));
+            System.out.println("Length of LCS(recursion) is " + lrs(str,str.length(),str.length()));
         }
     }
     // Memoization solution
-    public static int longestRepeatingSubsequence(String str)
+    public static int lcs1(String str)
     {
 
         int height = str.length();
@@ -61,6 +64,20 @@ public class lcs {
 
         return table[height-1][width-1];
     }
+    // recursive solution
+    public static int lrs(String s, int i, int j) {
+        // Base condition
+        if (i == 0 || j == 0)
+            return 0;
+
+        // If characters match and their indexes are not same
+        if (s.charAt(i - 1) == s.charAt(j - 1) && i != j)
+            return 1 + lrs(s, i - 1, j - 1);
+        else
+            // If characters don't match
+            return Math.max(lrs(s, i, j - 1), lrs(s, i - 1, j));
+    }
+
 
 
 }
