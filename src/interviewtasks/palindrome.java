@@ -5,8 +5,7 @@ package interviewtasks;
  * To keep things simple this it is limited to simple latin words,
  * no complicated handling of sentences and different input encodings
  * there are four implementations
- *
- * @author ksiv
+ * TAGS: #strings
  */
 
 public class palindrome {

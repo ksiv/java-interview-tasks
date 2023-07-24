@@ -5,9 +5,9 @@ import java.util.Arrays;
 
 /**
  * Implementation of FIFO queue in an array
- * ORIGIN: geeksforgeeks.org
- * TAGS: #array #RingBuffer
+ * TAGS: #array #ring-buffer
  */
+
 public class queueinarray {
     int popPointer, pushPointer;
     int arr[] = new int[10];

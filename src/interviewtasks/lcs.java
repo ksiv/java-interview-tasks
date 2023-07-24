@@ -2,7 +2,15 @@ package interviewtasks;
 
 import java.util.Locale;
 
-
+/**
+ * Given strings A and B, find the length of the longest repeating subsequence such that it can be found in
+ * each of those strings where sequence is a set of character spread around the word but following each other
+ * in certain order.
+ * @Example: words "xaxabx" and "axbaxx" longest subsequence is "xxx"
+ *
+ * TAGS: #LCS #memoization #DP #sequence
+ *
+ */
 public class lcs {
 
     public static void main(String[] args) {

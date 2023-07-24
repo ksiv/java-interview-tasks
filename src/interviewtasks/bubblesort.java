@@ -7,7 +7,7 @@ import java.util.Arrays;
  *
  * Implementation of "bubble sort" algorithm
  * TAGS: #sort
- *
+ * INFO: https://en.wikipedia.org/wiki/Bubble_sort
  */
 public class bubblesort {
 

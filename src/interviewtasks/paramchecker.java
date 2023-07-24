@@ -1,7 +1,7 @@
 package interviewtasks;
 
 
-public class paramChecker {
+public class paramchecker {
     public static boolean isStringIntegerValue(String str){
         try {
             Integer.parseInt(str);

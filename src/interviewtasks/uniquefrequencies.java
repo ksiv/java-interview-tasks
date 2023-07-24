@@ -3,7 +3,14 @@ package interviewtasks;
 import java.util.HashMap;
 import java.util.Map;
 
-public class uniqueFrequencies{
+
+/**
+ * This task is to find out if every number frequency is unique.
+ *
+ * TAGS: #frequency
+ */
+
+public class uniquefrequencies {
 
     public static void main(String[] args) {
 
@@ -29,7 +36,7 @@ public class uniqueFrequencies{
 
     public static boolean isFrequencyUnique(int[] arr) {
         // in this example we traverse input array once and resulted frequency array in worst case once
-        // maybe it is O(n) + O(n)?
+
         Map<Integer,Integer> frequencyMap = new HashMap<>();
         Map<Integer,Integer> duplcateCheck = new HashMap<>();
         for (Integer i : arr){

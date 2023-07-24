@@ -6,9 +6,8 @@ import java.util.Arrays;
 /**
  * implementation of two stacks in one array
  * one stack pointer goes from array start and enother one from the end
- * ORIGIN: geeksforgeeks.org
  * CMD: interviewtasks> java -classpath ".."  interviewtasks.twostacksinonearray "0<23,1<356,1<44,0<99,1>,0>"
- * TAGS: #twopoints
+ * TAGS: #dual-pointer
  */
 
 

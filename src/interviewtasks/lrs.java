@@ -10,8 +10,7 @@ import java.util.Locale;
  * For example, A = "xax" and B = "xax" then the index of first "x" must be different in the original string for A and B.
  * So far only one approach here, but different solution for this problem exist.
  *
- * ORIGIN: geeksforgeeks.org
- * TAGS: #LCS #Memoization #DP
+ * TAGS: #LCS #memoization #DP
  *
  */
 

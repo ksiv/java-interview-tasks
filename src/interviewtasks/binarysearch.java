@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 /**
  * Binary search in sorted array
- * ORIGIN: geeksforgeeks.org
- * TAGS: #binaryseach
+ * INFO: https://en.wikipedia.org/wiki/Binary_search_algorithm
+ * TAGS: #search
  */
 
 public class binarysearch {
