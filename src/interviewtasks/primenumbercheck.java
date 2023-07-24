@@ -4,13 +4,13 @@ package interviewtasks;
  * A prime number is a natural number greater than 1 that is not a product of two smaller natural numbers.
  * A natural number greater than 1 that is not prime is called a composite number.
  *
- * @author ksiv
+ * TAGS: #numbers
  */
 
 
-import static interviewtasks.paramChecker.isStringLongValue;
+import static interviewtasks.paramchecker.isStringLongValue;
 
-public class primeNumberCheck {
+public class primenumbercheck {
     static long numberToCheck = 0;
 
     public static void main(String[] args) {
@@ -32,7 +32,7 @@ public class primeNumberCheck {
         }
     }
 
-    // ~O(sqrt(N))/2 maybe :-)
+    // ~O(sqrt(N))
     private static void primeNumberCheck(long numberToCheck) {
         String output = "";
         if (numberToCheck == 1) {

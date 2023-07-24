@@ -4,21 +4,31 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-import static interviewtasks.paramChecker.isStringIntegerValue;
+import static interviewtasks.paramchecker.isStringIntegerValue;
 
 /**
+ *  Floyd's implementation
  *  Having Single Linked List (Chain) where every element only knows it's next.
- *  Task to detect a possible cycle.
- *  Intuition behind the algorithm
- *  where distance between 0 and cycle start = "a"
- *  distance traveled inside cycle by "slow" pointer = "b"
- *  cycle length "c"
- *  slow pointer went (a+b)
- *  since speed of fastPointer is double it made (a+b)*2
- *  or (a+b)+(n*c) where "n" num of cycles fastPointer made inside.
- *  2*(a + b) = (a + b) + n*c
- *  So,  'a + b = n*c'
+ *  Task to detect a possible cycle where some element.next pointer points to some element that was encountered before..
+ *
+ *  was hard for me to grasp the idea at the beginning.
+ *  for simplicity let's imagine
+ *        ▼
+ *  A->B->C->..
+ *     ↑_____↓
+ * the first pointer walked A-B and B-C before meeting point
+ * second pointer going twice the speed made same distance twice
+ * it went A-B,  B-C , (C-B) and B-C again.
+ * that means that distance A-B = C-B
+ *
+ * At this point the speed of both pointers become x1
+ * and first one goes from meeting point C-B
+ * and second goes from the first node A -B
+ * since it's same distance the point they met are the beginning of cycle, or it's end :-)
+ *
  * TAGS: #dual-pointer
+ * INFO: https://en.wikipedia.org/wiki/Cycle_detection
+ *
  */
 public class cycledetection {
 

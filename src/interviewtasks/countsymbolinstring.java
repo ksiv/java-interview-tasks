@@ -4,6 +4,7 @@ package interviewtasks;
  * This is one of the most basic tasks to find all encounter of some letter in a string.
  * The idea for you to show that you understand some elementary programming
  * including conditions and cycles.
+ * TAGS: #strings
  *
  */
 

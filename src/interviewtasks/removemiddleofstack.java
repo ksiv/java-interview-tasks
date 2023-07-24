@@ -5,6 +5,7 @@ import java.util.Stack;
 /**
  *  Remove middle element of a stack "without" additional data structure
  *  the question is can we call recursive call chain a "Data Structure"
+ *  TAGS: #recursion, #stack
  */
 
 

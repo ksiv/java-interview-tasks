@@ -9,9 +9,10 @@ import java.util.regex.Pattern;
  * There is no best algorithm out there as every approach better suits some type of input data than the other
  * in this example only few algorithms provided
  * Some methods count overlapping encounters and other do not.
+ * TAGS: #strings
  */
 
-public class subString {
+public class substring {
     static String stringToSeachIn; // Codename haystack
     static String subString; // Codename needle :-)
     static int subStringLength;

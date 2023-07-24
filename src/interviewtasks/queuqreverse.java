@@ -9,7 +9,6 @@ import java.util.Queue;
  * "Queues typically, but do not necessarily, order elements in a FIFO" (c)
  * this will work only for FIFO type queues.
  *
- * ORIGIN:geeksforgeeks.org
  * TAGS: #queue, #recursion
  */
 public class queuqreverse {

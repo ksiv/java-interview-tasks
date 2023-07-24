@@ -6,13 +6,14 @@ import java.util.Map;
 
 /**
  * \interviewtasks> java -classpath ".."  interviewtasks.anagram "asds", "ssda"
- * <p>
- * <p>
+
  * According to wikipedia "An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once"
  * And "A word is a basic element of language that carries an objective or practical meaning"
  * Test tasks on interview in most cases exclude "carries an objective or practical meaning" part.
  * So "test" and "ttse" would be an anagram :-) As for this task the idea to show the approach
  * and meaningless words in latin alphabet would do.
+ * INFO: https://en.wikipedia.org/wiki/Anagram
+ * TAGS: #strings
  */
 
 public class anagram {

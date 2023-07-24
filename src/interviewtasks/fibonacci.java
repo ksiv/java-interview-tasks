@@ -1,6 +1,6 @@
 package interviewtasks;
 
-import static interviewtasks.paramChecker.isStringIntegerValue;
+import static interviewtasks.paramchecker.isStringIntegerValue;
 
 /**
  *  Java program to calculate so-called "Fibonachi" sequence
@@ -8,7 +8,8 @@ import static interviewtasks.paramChecker.isStringIntegerValue;
  *  "Fibonachi/Fibonacci" sequence is a sequence where every following member is a sum of two previous members
  *  typically it has two first members as 1 and another 1 where first calculated member would be 2
  *  and the next one would be 3 following by 5 and so on.
- *  @author ksiv
+ *  INFO: https://en.wikipedia.org/wiki/Fibonacci_sequence
+ *  TAGS: #sequence
  */
 
 public class fibonacci {
