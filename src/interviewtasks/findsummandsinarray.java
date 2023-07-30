@@ -31,7 +31,22 @@ public class findsummandsinarray {
     }
 
     public static void main(String[] args) {
-        ArrayList<int[]> returnArray = getPairsOfSummands(new int[]{1, 5, 3, 7, 9, 10, 11, 12, 49, 51}, 100);
-        System.out.println(Arrays.deepToString(returnArray.toArray()));
+        String helpMessage = "Comma separated array of summand candidates \"1,4,3,9,6,7\" and a sum to search \"9\" are expected as input";
+        if (args.length != 2) {
+            System.out.println("wrong argument count");
+            System.out.println(helpMessage);
+            return;
+        } else {
+            String[] stringArray = args[0].split(",");
+            int[] intArray = new int[stringArray.length];
+            for (int i = 0; i < stringArray.length; i++) {
+                intArray[i] = Integer.parseInt(stringArray[i]);
+            }
+            int sum = Integer.parseInt(args[1]);
+            System.out.println("Input: "+Arrays.toString(intArray)+", possible sum:"+sum);
+            ArrayList<int[]> returnArray = getPairsOfSummands(intArray, sum);
+            System.out.println("Output: "+Arrays.deepToString(returnArray.toArray()));
+        }
+
     }
 }
