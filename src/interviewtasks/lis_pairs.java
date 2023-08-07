@@ -16,7 +16,7 @@ import java.util.Comparator;
 
 public class lis_pairs {
 
-    public static int getNumber(int[][] pairs) {
+    public static int getLISlength(int[][] pairs) {
         // Sort by first element in ascending order and second element in descending order
         Arrays.sort(pairs, new Comparator<int[]>() {
             public int compare(int[] pair1, int[] pair2) {
@@ -109,7 +109,7 @@ public class lis_pairs {
         }
         
 
-        System.out.println("Number of pairs: "+getNumber(pairsInt));
+        System.out.println("Number of pairs: "+ getLISlength(pairsInt));
         System.out.println(Arrays.deepToString(getMaxPairSequence(pairsInt).toArray()));
     }
 }
