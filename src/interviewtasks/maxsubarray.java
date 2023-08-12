@@ -20,7 +20,7 @@ public class maxsubarray {
         return maxVal;
     }
 
-    // faster
+    // faster (my)
     public static int maxProfit2(int[] prices) {
         int maxVal = 0;
         int min = prices[0];
@@ -38,7 +38,7 @@ public class maxsubarray {
         }
         return maxVal;
     }
-
+    // TODO Kadane's algorithm
     public static void main(String[] args) {
         String helpMessage = "Comma separated array \"1,3,1,4,2,3\" is expected as input";
         if (args.length != 1) {
