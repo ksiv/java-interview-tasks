@@ -12,34 +12,35 @@ import java.util.Arrays;
 public class rotatearray {
     // Loop solution
     public static int[] rotateLoop(int[] nums, int k) {
-        if (k>nums.length){
-            k = k%nums.length;
+        if (k > nums.length) {
+            k = k % nums.length;
         }
-        k = nums.length-k;
+        k = nums.length - k;
         int[] rotatedNums = new int[nums.length];
-        int j=0;
+        int j = 0;
 
-        for (int i=k;i<nums.length;i++){
-            rotatedNums[j]=nums[i];
+        for (int i = k; i < nums.length; i++) {
+            rotatedNums[j] = nums[i];
             j++;
         }
-        for (int i=0;i<k;i++){
-            rotatedNums[j]=nums[i];
+        for (int i = 0; i < k; i++) {
+            rotatedNums[j] = nums[i];
             j++;
         }
         return rotatedNums;
 
     }
+
     // Array Copy solution
     public static int[] rotateArrayCopy(int[] nums, int k) {
 
-        if (k>nums.length){
-            k = k%nums.length;
+        if (k > nums.length) {
+            k = k % nums.length;
         }
         int[] rotatedNums = new int[nums.length];
 
-        System.arraycopy(nums,nums.length-k,rotatedNums,0,k);
-        System.arraycopy(nums,0,rotatedNums,k,nums.length-k);
+        System.arraycopy(nums, nums.length - k, rotatedNums, 0, k);
+        System.arraycopy(nums, 0, rotatedNums, k, nums.length - k);
         return rotatedNums;
     }
 
