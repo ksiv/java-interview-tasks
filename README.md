@@ -49,6 +49,14 @@ Win 11 command line example<br>
 
 > /interviewtasks> java -classpath ".." interviewtasks.fibonacci 4
 
+## Which task practicing sites I use
+leetcode.com
+www.codechef.com
+www.geeksforgeeks.org
+Most of these tasks are originated not on these platforms, they just collect them and use. My advice is to use "comments /solutions" sections.
+
+## What about license.
+All my contribution is under MIT license. The rest is a well-known stuff from the public domain. I'm trying to put in credits where it's possible. It's really hard to track down the impact contribution. So often some user contributes the code to some platform but it turns out one of classic solutions for those who have read some certain books. 
 
 ## Worth noticing
 
