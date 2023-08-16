@@ -56,8 +56,8 @@ public class removeelement {
         }
         Arrays.sort(nums);
 
-        int[] retVal = new int[nums.length - k-1];
-        System.arraycopy(nums, 0, retVal, 0, nums.length - k-1);
+        int[] retVal = new int[nums.length - k];
+        System.arraycopy(nums, 0, retVal, 0, nums.length - k);
         return retVal;
     }
 
@@ -78,8 +78,8 @@ public class removeelement {
             }
 
         }
-        int[] retVal = new int[k-1];
-        System.arraycopy(nums, 0, retVal, 0, k-1);
+        int[] retVal = new int[k];
+        System.arraycopy(nums, 0, retVal, 0, k);
         return retVal;
     }
 
@@ -96,9 +96,12 @@ public class removeelement {
                 intArray[i] = Integer.parseInt(stringArray[i]);
             }
             int k = Integer.parseInt(args[1]);
+            int[] copy1 = intArray.clone();
+            int[] copy2 = intArray.clone();
+            System.out.println(Arrays.toString(intArray));
         System.out.println(Arrays.toString(removeElement(intArray, k)));
-        System.out.println(Arrays.toString(removeElement2(intArray, k)));
-        System.out.println(Arrays.toString(removeElement3(intArray, k)));
+        System.out.println(Arrays.toString(removeElement2(copy1, k)));
+        System.out.println(Arrays.toString(removeElement3(copy2, k)));
 
         }
     }
