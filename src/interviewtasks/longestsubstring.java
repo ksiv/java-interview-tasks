@@ -3,7 +3,15 @@ package interviewtasks;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * leetcode.com 3. Longest Substring Without Repeating Characters
+ * Given a string s, find the length of the longest
+ * substring
+ *  without repeating characters.
+ */
 public class longestsubstring {
+
+    // Brut force
     public static int lengthOfLongestSubstring(String s) {
         int maxVal=0;
         for (int i=0;i<s.length();i++){
@@ -29,7 +37,7 @@ public class longestsubstring {
 
         return maxCounter;
     }
-
+    // sliding window
     public static  int lengthOfLongestSubstring2(String s) {
         Set<Character>set=new HashSet<>();
         int maxLength=0;
@@ -61,6 +69,7 @@ public class longestsubstring {
             System.out.println(helpMessage);
             return;
         } else {
+            System.out.println(lengthOfLongestSubstring(args[0]));
             System.out.println(lengthOfLongestSubstring2(args[0]));
 
         }
