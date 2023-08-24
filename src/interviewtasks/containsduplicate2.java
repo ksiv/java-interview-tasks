@@ -22,6 +22,10 @@ public class containsduplicate2 {
                 if (Math.abs(map.get(nums[i]) - i) <= k) return true;
             }
             map.put(nums[i], i);
+            // just in case one needs it to be sliding window. Saves some RAM
+            if (i>k){
+                map.remove(i-k-1);
+            }
         }
         return false;
     }
