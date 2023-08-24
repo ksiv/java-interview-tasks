@@ -27,7 +27,7 @@ public class happynumber {
 
         // While N is not 1 .
         while (n != 1) {
-            // On success map.add returns true (the first encounter)
+            // On first insert of same value map.add returns true (the first encounter)
             if (!encounters.add(n)) return false;
             // Compute the sum of the squares
             int tmp = 0;
