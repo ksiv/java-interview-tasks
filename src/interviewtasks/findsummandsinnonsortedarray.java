@@ -14,6 +14,7 @@ import java.util.Map;
  * I initially though to make a reverse map but this solution looks much more elegant.
  * Input: Int[], int - array to search in and target sum
  * Return: summands position
+ * TAGS: #non-ordered-array
  */
 public class findsummandsinnonsortedarray {
     public static int[] twoSum(int[] nums, int target) {
