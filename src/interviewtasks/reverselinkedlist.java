@@ -2,7 +2,7 @@ package interviewtasks;
 
 import java.util.Arrays;
 
-public class reverselinkedlist2 {
+public class reverselinkedlist {
     /**
      * leetcode 92. Reverse Linked List II
      * Given array of int e.g.[1,2,3,4,5,6]
