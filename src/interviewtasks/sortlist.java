@@ -4,109 +4,123 @@ import java.util.*;
 
 public class sortlist {
 
+    public static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
+
+        @Override
+        public String toString() {
+            return "ListNode{" +
+                    "val=" + val +
+                    ", next=" + next +
+                    '}';
+        }
+
+    }
+
+
     // Solution for uniq values using TreeMap sorting
-    class SolutionForUniq {
+    class BuiltInTreeMapSort {
         // Sorting using TreeMap
         // Maybe slower but is not a fake
         public ListNode sortList(ListNode head) {
-            if(head==null){
+            if (head == null || head.next == null){
                 return head;
+
             }
-            HashMap<Integer,ListNode> map = new HashMap<>();
+
+            HashMap<Integer, ListNode> map = new HashMap<>();
             // Singlelinked list to Map
-            while (head!=null){
-                map.put(head.val,head);
-                head=head.next;
+            while (head != null) {
+                map.put(head.val, head);
+                head = head.next;
             }
             // Sort using placing into TreeMap
-            TreeMap<Integer,ListNode> tmap = new TreeMap<>(map);
+            TreeMap<Integer, ListNode> tmap = new TreeMap<>(map);
             // Head is first element of TreeMap
             head = tmap.firstEntry().getValue();
 
             // Set next for every previous element
-            ListNode prev =null;
+            ListNode prev = null;
 
             for (Map.Entry<Integer, ListNode>
-                    entry : tmap.entrySet()){
+                    entry : tmap.entrySet()) {
 
-                if(prev!=null){
-                    prev.next=entry.getValue();
-                    prev=entry.getValue();
+                if (prev != null) {
+                    prev.next = entry.getValue();
+                    prev = entry.getValue();
 
-                }else{
-                    prev=entry.getValue();
+                } else {
+                    prev = entry.getValue();
                 }
             }
             // last.next to null
             ListNode last = tmap.lastEntry().getValue();
-            last.next=null;
+            last.next = null;
             return head;
         }
 
 
     }
-    public static class ListNode {
-          int val;
-          String stamp;
-          ListNode next;
-          ListNode() {}
-          ListNode(int val) { this.val = val; this.stamp=Long.toString(System.nanoTime());}
-          ListNode(int val, ListNode next) { this.val = val; this.next = next;  this.stamp=Long.toString(System.nanoTime());}
 
-          @Override
-          public String toString() {
-              return "ListNode{" +
-                      "val=" + val +
-                      "val+1=" + stamp +
-                      ", next=" + next +
-                      '}';
-          }
-
-      }
-    public static class SolutionMerge {
+    public static class MergeSort {
 
         public ListNode sortList(ListNode head) {
-            if (head == null || head.next == null)
+            if (head == null || head.next == null) {
                 return head;
-
-            // step 1. cut the list to two halves
-            ListNode prev = null, slow = head, fast = head;
+            }
+            // step 1. cut the list to two halves using two-pointers
+            ListNode leftListEnd = null;
+            ListNode slow = head;
+            ListNode fast = head;
 
             while (fast != null && fast.next != null) {
-                prev = slow;
+                leftListEnd = slow;
                 slow = slow.next;
                 fast = fast.next.next;
             }
 
-            prev.next = null;
+            leftListEnd.next = null;
 
             // step 2. sort each half
-            ListNode l1 = sortList(head);
-            ListNode l2 = sortList(slow);
+            ListNode leftList = sortList(head);
+            ListNode rightList = sortList(slow);
 
-            // step 3. merge l1 and l2
-            return merge(l1, l2);
+            // step 3. merge left and right halves
+            return merge(leftList, rightList);
         }
 
-        ListNode merge(ListNode l1, ListNode l2) {
+        ListNode merge(ListNode right, ListNode left) {
             ListNode l = new ListNode(0), p = l;
 
-            while (l1 != null && l2 != null) {
-                if (l1.val < l2.val) {
-                    p.next = l1;
-                    l1 = l1.next;
+            while (right != null && left != null) {
+                if (right.val < left.val) {
+                    p.next = right;
+                    right = right.next;
                 } else {
-                    p.next = l2;
-                    l2 = l2.next;
+                    p.next = left;
+                    left = left.next;
                 }
                 p = p.next;
             }
 
-            if (l1 != null)
-                p.next = l1;
+            if (right != null)
+                p.next = right;
 
-            if (l2 != null)
-                p.next = l2;
+            if (left != null)
+                p.next = left;
 
             return l.next;
         }
@@ -116,40 +130,40 @@ public class sortlist {
     static class BubbleSort {
         // bubble (will take long time)
         public ListNode sortList(ListNode head) {
-            if(head==null){
+            if (head == null || head.next == null){
                 return head;
             }
-            Boolean swapDone=true;
-            while (swapDone){
-                swapDone=false;
-                ListNode prevNode=null;
+            Boolean swapDone = true;
+            while (swapDone) {
+                swapDone = false;
+                ListNode prevNode = null;
                 ListNode node = head;
                 ListNode nextNode;
-                while(node.next!=null){
+                while (node.next != null) {
                     //swapDone=false;
-                    if(node.val>node.next.val){
+                    if (node.val > node.next.val) {
                         // if head swap
-                        if(node.equals(head)){
-                            head=node.next;
+                        if (node.equals(head)) {
+                            head = node.next;
                         }
                         // if previous exist  prev to next
-                        if (prevNode!=null){
-                            prevNode.next=node.next;
+                        if (prevNode != null) {
+                            prevNode.next = node.next;
                         }
 
                         nextNode = node.next;
                         // this to next but one
-                        node.next=node.next.next;
+                        node.next = node.next.next;
                         // next node.next to this node
-                        nextNode.next=node;
+                        nextNode.next = node;
 
                         //next node now prevNode
-                        prevNode=nextNode;
-                        swapDone=true;
+                        prevNode = nextNode;
+                        swapDone = true;
 
-                    }else{
-                        prevNode=node;
-                        node=node.next;
+                    } else {
+                        prevNode = node;
+                        node = node.next;
                     }
                 }
             }
@@ -158,45 +172,151 @@ public class sortlist {
     }
 
     // Support duplicates
-    static class JavaBuildInArrasSort {
+    static class CountSort {
+        public static class NodeInfo {
+            public int value;
+            ListNode node;
+
+            // added type safety as compare to Object[][]
+            NodeInfo(int value, ListNode node) {
+                this.value = value;
+                this.node = node;
+
+            }
+
+        }
+
+        void countSort(ArrayList<NodeInfo> arr) {
+            int arrSize = arr.size();
+            NodeInfo output[] = new NodeInfo[arrSize];
+
+            // Create a frequency map for all numbers from min to max
+            // number and initialize counters  as 0
+            Map<Integer, Integer> frequencyMap = new HashMap<Integer, Integer>();
+            int min = 0;
+            int max = 0;
+            for (int i = 0; i < arrSize; i++) {
+                max = Math.max(max, arr.get(i).value);
+                min = Math.min(min, arr.get(i).value);
+            }
+            for (int i = min; i <= max; ++i) {
+                frequencyMap.put(i, 0);
+
+            }
+
+
+            // store encounter count of each int
+            for (int i = 0; i < arrSize; i++) {
+                frequencyMap.put(arr.get(i).value, frequencyMap.get(arr.get(i).value) + 1);
+
+            }
+
+            // Change frequency map so that it now contains
+            // actual position of this Int in output array
+
+            for (int i = min + 1; i <= max; i++) {
+
+                frequencyMap.put(i, frequencyMap.get(i) + frequencyMap.get(i - 1));
+
+            }
+
+            // Build the output array (bottom-up)
+            for (int i = arrSize - 1; i >= 0; i--) {
+
+                output[frequencyMap.get(arr.get(i).value) - 1] = arr.get(i);
+                frequencyMap.put(arr.get(i).value, frequencyMap.get(arr.get(i).value) - 1);
+
+            }
+
+            // Copy the output array to arr, so that arr now
+            // contains sorted characters
+            arr.clear();
+            for (NodeInfo i : output)
+                arr.add(i);
+
+        }
+
+        // Sorting driver
+        public ListNode sortList(ListNode head) {
+            if (head == null || head.next == null){
+                return head;
+
+            }
+            // Put nodes to array
+            ArrayList<NodeInfo> al = new ArrayList<>();
+            ListNode node = head;
+            while (true) {
+                al.add(new NodeInfo(node.val, node));
+                if (node.next == null) break;
+                node = node.next;
+
+            }
+            int counter = al.size();
+            // Sort the array
+            countSort(al);
+            // Fix link for every prev node
+            ListNode prev = null;
+
+            for (int i = 0; i < counter; i++) {
+                if (prev != null) {
+                    prev.next = al.get(i).node;
+                    prev = al.get(i).node;
+
+                } else {
+                    prev = al.get(i).node;
+                }
+            }
+            // Fix last.next to null
+            al.get(al.size() - 1).node.next = null;
+            // First node is the new 'head'
+            head = al.get(0).node;
+
+            return head;
+
+        }
+    }
+
+    // Support duplicates
+    static class BuiltInArrasSort {
+
         // Object[][] Sorting
         public ListNode sortList(ListNode head) {
-            if(head==null){
+            if (head == null) {
                 return head;
             }
             // Count nodes
-            int counter=1;
+            int counter = 1;
             ListNode node = head;
-            while(node.next!=null){
+            while (node.next != null) {
                 counter++;
-                node=node.next;
+                node = node.next;
             }
             // Put nodes to array
             Object[][] objects = new Object[counter][2];
             node = head;
-            for(int i=0;i<counter;i++){
-                objects[i][0]=node.val;
-                objects[i][1]=node;
-                node=node.next;
+            for (int i = 0; i < counter; i++) {
+                objects[i][0] = node.val;
+                objects[i][1] = node;
+                node = node.next;
             }
             // Sort the array
             Arrays.sort(objects, Comparator.comparingInt(o -> (int) o[0]));
 
             // Fix link for every prev node
-            ListNode prev =null;
+            ListNode prev = null;
 
-            for(int i=0;i<counter;i++){
-                if(prev!=null){
-                    prev.next=(ListNode) objects[i][1];
-                    prev= (ListNode) objects[i][1];
+            for (int i = 0; i < counter; i++) {
+                if (prev != null) {
+                    prev.next = (ListNode) objects[i][1];
+                    prev = (ListNode) objects[i][1];
 
-                }else{
-                    prev= (ListNode) objects[i][1];
+                } else {
+                    prev = (ListNode) objects[i][1];
                 }
             }
             // Fix last.next to null
-            ListNode last = (ListNode) objects[counter-1][1];
-            last.next=null;
+            ListNode last = (ListNode) objects[counter - 1][1];
+            last.next = null;
             // First node is the new 'head'
             head = (ListNode) objects[0][1];
 
@@ -205,8 +325,8 @@ public class sortlist {
         }
     }
 
-    public static ListNode addNext(ListNode node , int val){
-        node.next=new ListNode(val);
+    public static ListNode addNext(ListNode node, int val) {
+        node.next = new ListNode(val);
         return node.next;
     }
 
@@ -220,26 +340,40 @@ public class sortlist {
         } else {
             // arg handling
             String[] stringArray = args[0].split(",");
-            int[] arr = new int[stringArray.length];
+            int[] arrInt = new int[stringArray.length];
             for (int i = 0; i < stringArray.length; i++) {
 
-                arr[i] = Integer.parseInt(stringArray[i]);
+                arrInt[i] = Integer.parseInt(stringArray[i]);
 
             }
 
-            ListNode head = new ListNode(arr[0]);
+            ListNode head = new ListNode(arrInt[0]);
+
             ListNode node = head;
-
-            for (int i=1;i<arr.length;i++) {
-
-                node = addNext(node, arr[i]);
-
+            for (int i = 1; i < arrInt.length; i++) {
+                node = addNext(node, arrInt[i]);
             }
-            System.out.println("before " + head);
-            //ListNode result = new BubbleSort().sortList(head);
-            //ListNode result = new JavaBuildInArrasSort().sortList(head);
-            ListNode result = new SolutionMerge().sortList(head);
-            System.out.println(result);
+            System.out.println("Buble " + new BubbleSort().sortList(head));
+
+            head = new ListNode(arrInt[0]);
+            node = head;
+            for (int i = 1; i < arrInt.length; i++) {
+                node = addNext(node, arrInt[i]);
+            }
+            System.out.println("BUilt-in" + new BuiltInArrasSort().sortList(head));
+
+            head = new ListNode(arrInt[0]);
+            node = head;
+            for (int i = 1; i < arrInt.length; i++) {
+                node = addNext(node, arrInt[i]);
+            }
+            System.out.println("Merge" + new MergeSort().sortList(head));
+            head = new ListNode(arrInt[0]);
+            node = head;
+            for (int i = 1; i < arrInt.length; i++) {
+                node = addNext(node, arrInt[i]);
+            }
+            System.out.println("Count" + new CountSort().sortList(head));
         }
     }
 }
