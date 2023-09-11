@@ -27,31 +27,20 @@ public class binarysearch {
     }
     static class Solution {
         static int binarySearchWrapper(int arr[], int k) {
-            int low = 0;
-            int high = arr.length - 1;
-            if (arr[low] == k) {
-                return low;
+            int left = 0 ;
+            int right = arr.length-1;
+            while (left<=right){
+                int mid  = left + (right-left)/2;
+                if (arr[mid] == k) {
+                    return mid;
+                }
+                if (arr[mid] < k) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
             }
-            if (arr[high] == k) {
-                return high;
-            }
-            return binarySearchWorker(arr, low, high, k);
-        }
-
-        static int binarySearchWorker(int arr[], int low, int high, int k) {
-            if ((high - low) <= 1) {
-                return high;
-            }
-            int middle = high - ((high - low) / 2);
-            if (arr[middle] == k) {
-                return middle;
-            }
-            if (arr[middle] > k) {
-                high = middle;
-            } else {
-                low = middle;
-            }
-            return binarySearchWorker(arr, low, high, k);
+            return left;
         }
     }
 
