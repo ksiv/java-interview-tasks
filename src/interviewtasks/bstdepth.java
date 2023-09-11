@@ -51,7 +51,7 @@ public class bstdepth {
             }
             bst tree = new bst();
             tree.root = tree.buildFromAnArray(intArray);
-            
+
             System.out.println(tree.root.toString());
             System.out.println(":" + counter(tree.root));
         }
