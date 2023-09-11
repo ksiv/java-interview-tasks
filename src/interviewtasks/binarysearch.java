@@ -69,8 +69,8 @@ public class binarysearch {
             }
             int k = Integer.parseInt(args[1]);
             System.out.println(Arrays.toString(intArray));
-            System.out.println("Index in array (-1 for absence): " + Solution.binarySearchWrapper(intArray, k));
-            System.out.println("Index in array or insert position: " + SolutionNative.searchInsert(intArray, k));
+            System.out.println("Custom: " + Solution.binarySearchWrapper(intArray, k));
+            System.out.println("Native: " + SolutionNative.searchInsert(intArray, k));
         }
     }
 
