@@ -1,6 +1,7 @@
 package interviewtasks;
 
 import java.util.Arrays;
+import static interviewtasks.lib.linkedlist.*;
 
 public class reverselinkedlist {
     /**
@@ -9,30 +10,6 @@ public class reverselinkedlist {
      * interval start pos end pos 2 and 4
      * return result should be [1,4,3,2,5]
      */
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-
-        @Override
-        public String toString() {
-            return "ListNode{" +
-                    "val=" + val +
-                    ", next=" + next +
-                    '}';
-        }
-    }
 
     static class Solution {
         public static ListNode reverseBetween(ListNode head, int left, int right) {

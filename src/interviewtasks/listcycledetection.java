@@ -1,5 +1,7 @@
 package interviewtasks;
 
+import interviewtasks.lib.linkedlist.*;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -30,11 +32,11 @@ import static interviewtasks.paramchecker.isStringIntegerValue;
  * INFO: https://en.wikipedia.org/wiki/Cycle_detection
  *
  */
-public class cycledetection {
+public class listcycledetection {
 
     public static void main(String[] args) {
         int nodesToMake = 0, loopAt = 1;
-        String helpMessage = "number of nodes >1 and N of loopAt Node are input params. Example \"5 1\"";
+        String helpMessage = "number of nodes >1 and N of loopAt Node are input params. Example \"5\" \"1\"";
         if (args.length != 2) {
             System.out.println("wrong argument count");
             System.out.println(helpMessage);
@@ -56,11 +58,11 @@ public class cycledetection {
 
         }
         // make node chain of given length "nodesTomake"
-        Map<Integer, Node> nodes = new HashMap();
-        Node firstNode = new Node(0);
-        nodes.put(0,firstNode);
+        Map<Integer, ListNode> nodes = new HashMap();
+        ListNode firstListNode = new ListNode(0);
+        nodes.put(0, firstListNode);
         for (int i =1; i < nodesToMake;i++){
-            Node n = new Node(i);
+            ListNode n = new ListNode(i);
             nodes.put(i,n);
             nodes.get(i-1).next = n;
 
@@ -70,28 +72,18 @@ public class cycledetection {
         nodes.get(loopAt).next=nodes.get(tmp);
         System.out.println("set "+loopAt+" node.next to"+tmp);
         // Detect cycle
-        Node loopNode = detectLoop(firstNode);
-        if (loopNode == null) {
+        ListNode loopListNode = detectLoop(firstListNode);
+        if (loopListNode == null) {
             System.out.println("Loop not present");
         } else {
-            System.out.println("Start node of Loop is found at:" + loopNode.data);
+            System.out.println("Start node of Loop is found at:" + loopListNode.val);
         }
     }
 
-    // Node has only two fields useful load (data) and link to next Node.
-    public static class Node {
-        int data;
-        Node next;
 
-        Node(int d) {
-            data = d;
-            next = null;
-        }
-    }
-
-    public static Node detectLoop(Node startNode) {
-        Node firstPointer = startNode;
-        Node secondPointer = startNode;
+    public static ListNode detectLoop(ListNode startListNode) {
+        ListNode firstPointer = startListNode;
+        ListNode secondPointer = startListNode;
         // Default value of Node.next pointer is "null"
         // End of chain
         while (secondPointer != null && secondPointer.next != null) {
@@ -103,7 +95,7 @@ public class cycledetection {
             // FastPointer speed changed to x1
             // now two pointers move to the same point by different routes
             if (firstPointer == secondPointer) {
-                firstPointer = startNode;
+                firstPointer = startListNode;
                 while (firstPointer != secondPointer) {
                     firstPointer = firstPointer.next;
                     secondPointer = secondPointer.next;

@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 
 
-public class twostacksinonearray {
+public class arraytwostacksinonearray {
     static int arr[];
     static int size;
     static int top1, top2;

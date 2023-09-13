@@ -8,7 +8,7 @@ package interviewtasks;
  *
  */
 
-public class countsymbolinstring {
+public class stringcountsymbol {
     private static String stringToSeachIn;
     private static int stringToSearchInLength;
     private static char symbol;

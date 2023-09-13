@@ -10,7 +10,7 @@ import java.util.Set;
  *
  */
 
-public class duplicatesinarray {
+public class arraycontainsduplicates {
     public static boolean containsDuplicate(int[] nums) {
         Arrays.sort(nums);
         for (int i = 1; i < nums.length; i++) {

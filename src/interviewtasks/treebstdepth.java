@@ -2,9 +2,6 @@ package interviewtasks;
 
 import interviewtasks.lib.bst;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 /**
  * leetcode.com 104. Maximum Depth of Binary Tree
  * 4,2,7,1,3,6,9 ->
@@ -12,11 +9,11 @@ import java.util.Arrays;
  * A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
  */
 
-public class bstdepth {
+public class treebstdepth {
 
 
     public static int counter(bst.TreeNode root) {
-        return new bstdepth().maxDepthRunner(root, 0);
+        return new treebstdepth().maxDepthRunner(root, 0);
 
     }
 

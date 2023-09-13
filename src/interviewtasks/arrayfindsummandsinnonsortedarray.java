@@ -16,7 +16,7 @@ import java.util.Map;
  * Return: summands position
  * TAGS: #non-ordered-array
  */
-public class findsummandsinnonsortedarray {
+public class arrayfindsummandsinnonsortedarray {
     public static int[] twoSum(int[] nums, int target) {
         int n = nums.length;
         Map<Integer, Integer> map = new HashMap<>();

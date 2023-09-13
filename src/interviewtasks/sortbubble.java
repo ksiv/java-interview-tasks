@@ -9,7 +9,7 @@ import java.util.Arrays;
  * TAGS: #sort
  * INFO: https://en.wikipedia.org/wiki/Bubble_sort
  */
-public class bubblesort {
+public class sortbubble {
 
 
     public static void main(String[] args) {

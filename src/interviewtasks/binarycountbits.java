@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 import static interviewtasks.paramchecker.isStringIntegerValue;
 
-public class countbits {
+public class binarycountbits {
 
     /** leetcode 338. Counting Bits
      * Given an integer n,

@@ -11,7 +11,7 @@ import java.util.Queue;
  *
  * TAGS: #queue, #recursion
  */
-public class queuqreverse {
+public class queuereverse {
 
     public static void main(String[] args) {
         String helpMessage = "string like \"7,2,3,4,1,1\" expected as input.";
@@ -28,7 +28,7 @@ public class queuqreverse {
                 q.add(Integer.parseInt(stringArray[i]));
 
             }
-            queuqreverse r = new queuqreverse();
+            queuereverse r = new queuereverse();
 
             System.out.println("before: " + q);
             r.rev(q);

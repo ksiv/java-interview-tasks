@@ -10,7 +10,7 @@ import static interviewtasks.lib.linkedlist.*;
  *
  *
  */
-public class mergetwosortedlists {
+public class listmergetwosortedlists {
     static class Solution {
         // Two pointers
         static public ListNode mergeTwoLists(ListNode list1, ListNode list2) {

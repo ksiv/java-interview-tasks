@@ -3,7 +3,7 @@ package interviewtasks;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class mergeintervals {
+public class intervalmerge {
 
     /**
      * leetcode 56. Merge Intervals

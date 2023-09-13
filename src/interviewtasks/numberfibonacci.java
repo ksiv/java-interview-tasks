@@ -12,22 +12,23 @@ import static interviewtasks.paramchecker.isStringIntegerValue;
  *  TAGS: #sequence
  */
 
-public class fibonacci {
+public class numberfibonacci {
     static int sequenceLength;
 
     public static void main(String[] args) {
+        String helpMessage="one input parameter of type Int with value more than \"2\" is expected";
         if (args.length != 1) {
             System.out.println("wrong argument count");
-            System.out.println("one input parameter of type Int with value more than \"2\" is expected");
+            System.out.println(helpMessage);
             return ;
         }
         else if (!isStringIntegerValue(args[0])){
             System.out.println("argument is not a number");
-            System.out.println("one input parameter of type Int with value more than \"2\" is expected");
+            System.out.println(helpMessage);
             return ;
         }else if (Integer.parseInt(args[0])<2){
             System.out.println("argument less than 2, we know the first two members of so called Fibonachi sequence");
-            System.out.println("one input parameter of type Int with value more than \"2\" is expected");
+            System.out.println(helpMessage);
         }else{
             sequenceLength = Integer.parseInt(args[0]);
             printNlengthFibonachi(sequenceLength);
@@ -37,16 +38,20 @@ public class fibonacci {
 
 
     private static void printNlengthFibonachi(int n){
-        String outputString ="";
+        StringBuilder outputString = new StringBuilder();
         int fibA =1;
         int fibB =1;
         int fibC;
         int i;
-        outputString += "-"+fibA+"-";
-        outputString += fibB+"-";
+        outputString.append('-');
+        outputString.append(fibA);
+        outputString.append('-');
+        outputString.append(fibB);
+        outputString.append('-');
         for (i=2; i<n; i++){
             fibC = fibA+fibB;
-            outputString += fibC+"-";
+            outputString.append(fibC);
+            outputString.append('-');
             fibA=fibB;
             fibB=fibC;
         }

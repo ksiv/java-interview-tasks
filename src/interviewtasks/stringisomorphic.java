@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
  * All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself.
  * ASCII set is used
  */
-public class isomorphicstrings {
+public class stringisomorphic {
     public static boolean isIsomorphic(String s, String t) {
         if (s.length() != t.length()) return false;
         Map<Character, Character> map = new HashMap<>();

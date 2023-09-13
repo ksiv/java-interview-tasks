@@ -12,7 +12,7 @@ import java.util.Locale;
  * In Java, the compiler represents the signed integers using 2's complement notation. Therefore, in Example 2 above, the input represents the signed integer -3 and the output represents the signed integer -1073741825.
  * // you need treat n as an unsigned value
  */
-public class reversebits {
+public class binarybitreverse {
     public static class Solution {
         public static int reverseBits(int n) {
 

@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
  *
  */
-public class issametree {
+public class treeissametree {
 
     // non memory optimal approach
     public boolean isSameTree(bst.TreeNode p, bst.TreeNode q) {
@@ -64,7 +64,7 @@ public class issametree {
             System.out.println(tree2.root.toString());
 
 
-            System.out.println(new issametree().isSameTree(tree1.root,tree2.root));
+            System.out.println(new treeissametree().isSameTree(tree1.root,tree2.root));
 
         }
     }
