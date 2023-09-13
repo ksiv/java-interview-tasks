@@ -5,7 +5,7 @@ import java.util.Set;
 
 import static interviewtasks.paramchecker.isStringIntegerValue;
 
-public class happynumber {
+public class numberhappy {
 
     /**
      * leetcode.com 202. Happy Number

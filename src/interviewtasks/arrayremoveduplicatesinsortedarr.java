@@ -2,6 +2,8 @@ package interviewtasks;
 
 
 import java.util.Arrays;
+import static interviewtasks.paramchecker.stringArrayToIntArray;
+
 
 /**
  * leetcode.com N 26
@@ -79,10 +81,7 @@ public class arrayremoveduplicatesinsortedarr {
             return;
         } else {
             String[] stringArray = args[0].split(",");
-            int[] intArray = new int[stringArray.length];
-            for (int i = 0; i < stringArray.length; i++) {
-                intArray[i] = Integer.parseInt(stringArray[i]);
-            }
+            int[] intArray = stringArrayToIntArray(stringArray);
             int[] copy = intArray.clone();
             System.out.println(Arrays.toString(intArray));
             System.out.println("removeDuplicates "+Arrays.toString(removeDuplicates(intArray)));

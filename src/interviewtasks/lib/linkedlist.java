@@ -30,4 +30,14 @@ public class linkedlist {
         node.next = new ListNode(val);
         return node.next;
     }
+    public static ListNode linkedListFromIntArray(int[] arr){
+        ListNode head = new ListNode(arr[0]);
+        ListNode node = head;
+        for (int i : arr) {
+            if (i == arr[0]) continue;
+            node = addNext(node, i);
+
+        }
+        return head;
+    }
 }

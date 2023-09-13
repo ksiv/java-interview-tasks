@@ -1,6 +1,7 @@
 package interviewtasks;
 
 import static interviewtasks.lib.linkedlist.*;
+import static interviewtasks.paramchecker.*;
 
 /**
  * leetcode 21. Merge Two Sorted Lists
@@ -81,39 +82,18 @@ public class listmergetwosortedlists {
         } else {
             // arg handling
             String[] stringArray = args[0].split(",");
-            int[] arrInt = new int[stringArray.length];
-            for (int i = 0; i < stringArray.length; i++) {
-
-                arrInt[i] = Integer.parseInt(stringArray[i]);
-
-            }
+            int[] arrInt = stringArrayToIntArray(stringArray);
             String[] stringArray2 = args[1].split(",");
-            int[] arrInt2 = new int[stringArray2.length];
-            for (int i = 0; i < stringArray2.length; i++) {
+            int[] arrInt2 = stringArrayToIntArray(stringArray2);
 
-                arrInt2[i] = Integer.parseInt(stringArray2[i]);
+            ListNode head1 = linkedListFromIntArray(arrInt);
 
-            }
-
-            ListNode head1 = new ListNode(arrInt[0]);
-
-            ListNode node = head1;
-            for (int i = 1; i < arrInt.length; i++) {
-                node = addNext(node, arrInt[i]);
-            }
-
-
-            ListNode head2 = new ListNode(arrInt2[0]);
-            node = head2;
-            for (int i = 1; i < arrInt2.length; i++) {
-                node = addNext(node, arrInt2[i]);
-            }
+            ListNode head2 = linkedListFromIntArray(arrInt2);
 
 
             System.out.println(head1);
 
             System.out.println(head2);
-
 
             System.out.println(new Solution().mergeTwoLists(head1, head2));
         }

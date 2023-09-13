@@ -2,8 +2,9 @@ package interviewtasks;
 
 import java.util.Arrays;
 import static interviewtasks.lib.linkedlist.*;
+import static interviewtasks.paramchecker.stringArrayToIntArray;
 
-public class reverselinkedlist {
+public class listreverselinkedlist {
     /**
      * leetcode 92. Reverse Linked List II
      * Given array of int e.g.[1,2,3,4,5,6]
@@ -64,10 +65,7 @@ public class reverselinkedlist {
         }
     }
 
-    public static ListNode addNext(ListNode node, int val) {
-        node.next = new ListNode(val);
-        return node.next;
-    }
+
 
     public static void main(String[] args) {
         String helpMessage = "array like \"7,2,3,4,1,1\" and \"2\", \"4\" expected as input.";
@@ -78,22 +76,10 @@ public class reverselinkedlist {
         } else {
             // arg handling
             String[] stringArray = args[0].split(",");
-            int[] arr = new int[stringArray.length];
-            for (int i = 0; i < stringArray.length; i++) {
-
-                arr[i] = Integer.parseInt(stringArray[i]);
-
-            }
-
+            int[] arr = stringArrayToIntArray(stringArray);
             System.out.println("before: " + Arrays.toString(arr));
-            ListNode head = new ListNode(arr[0]);
-            ListNode node = head;
-            for (int i : arr) {
-                if (i == arr[0]) continue;
-                node = addNext(node, i);
+            ListNode head = linkedListFromIntArray(arr);
 
-            }
-            System.out.println("-" + head);
             ListNode result = new Solution().reverseBetween(head, Integer.parseInt(args[1]), Integer.parseInt(args[2]));
             System.out.println(result);
 
