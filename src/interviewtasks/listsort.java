@@ -2,6 +2,7 @@ package interviewtasks;
 
 import java.util.*;
 import static interviewtasks.lib.linkedlist.*;
+import static interviewtasks.paramchecker.*;
 /**
  * leetcode 148. Sort List
  * Given the head of a linked list, return the list after sorting it in ascending order.
@@ -318,39 +319,19 @@ public class listsort {
         } else {
             // arg handling
             String[] stringArray = args[0].split(",");
-            int[] arrInt = new int[stringArray.length];
-            for (int i = 0; i < stringArray.length; i++) {
+            int[] arrInt = stringArrayToIntArray(stringArray);
 
-                arrInt[i] = Integer.parseInt(stringArray[i]);
 
-            }
-
-            ListNode head = new ListNode(arrInt[0]);
-
-            ListNode node = head;
-            for (int i = 1; i < arrInt.length; i++) {
-                node = addNext(node, arrInt[i]);
-            }
+            ListNode head = linkedListFromIntArray(arrInt);
             System.out.println("Buble " + new BubbleSort().sortList(head));
 
-            head = new ListNode(arrInt[0]);
-            node = head;
-            for (int i = 1; i < arrInt.length; i++) {
-                node = addNext(node, arrInt[i]);
-            }
+            head = linkedListFromIntArray(arrInt);
             System.out.println("BUilt-in" + new BuiltInArrasSort().sortList(head));
 
-            head = new ListNode(arrInt[0]);
-            node = head;
-            for (int i = 1; i < arrInt.length; i++) {
-                node = addNext(node, arrInt[i]);
-            }
+            head = linkedListFromIntArray(arrInt);
             System.out.println("Merge" + new MergeSort().sortList(head));
-            head = new ListNode(arrInt[0]);
-            node = head;
-            for (int i = 1; i < arrInt.length; i++) {
-                node = addNext(node, arrInt[i]);
-            }
+
+            head = linkedListFromIntArray(arrInt);
             System.out.println("Count" + new CountSort().sortList(head));
         }
     }
