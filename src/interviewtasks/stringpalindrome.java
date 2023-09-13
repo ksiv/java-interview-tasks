@@ -8,7 +8,7 @@ package interviewtasks;
  * TAGS: #strings
  */
 
-public class palindrome {
+public class stringpalindrome {
     static String inputString;
 
     public static void main(String[] args) throws Exception {

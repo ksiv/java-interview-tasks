@@ -16,7 +16,7 @@ import java.util.Map;
  * TAGS: #strings
  */
 
-public class anagram {
+public class stringanagram {
 
 
     public static void main(String[] args) {

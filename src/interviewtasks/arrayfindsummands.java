@@ -8,7 +8,7 @@ import java.util.Arrays;
  * Given an array of integers nums and an integer target, return indices of pairs of numbers such that they add up to target.
  * TAGS: #search #arrays #binary-search #numbers
  */
-public class findsummandsinarray {
+public class arrayfindsummands {
 
     public static ArrayList<int[]> getPairsOfSummands(int[] nums, int sum) {
         // 1. filter out any elements that a bigger that a "sum".

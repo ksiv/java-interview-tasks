@@ -1,7 +1,5 @@
 package interviewtasks.lib;
 
-import interviewtasks.sortlist;
-
 public class linkedlist {
     public static class ListNode {
         public int val;

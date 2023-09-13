@@ -2,7 +2,9 @@ package interviewtasks;
 
 import java.util.Arrays;
 
-public class mergearrays {
+import static interviewtasks.paramchecker.stringArrayToIntArray;
+
+public class arraymerge {
     /**
      * You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
      * Merge nums1 and nums2 into a single array sorted in non-decreasing order.
@@ -38,23 +40,13 @@ public class mergearrays {
         } else {
             // arg handling
             String[] stringArray = args[0].split(",");
-            int [] arr = new int [stringArray.length];
-            for (int i=0;i<stringArray.length;i++) {
-
-                arr[i] = Integer.parseInt(stringArray[i]);
-
-            }
+            int [] arr = stringArrayToIntArray(stringArray);
             String[] stringArray2 = args[1].split(",");
-            int [] arr2 = new int [stringArray2.length];
-            for (int i=0;i<stringArray2.length;i++) {
-
-                arr2[i] = Integer.parseInt(stringArray2[i]);
-
-            }
+            int [] arr2 = stringArrayToIntArray(stringArray2);
             int[] arrCopy = arr.clone();
             int[] arr2Copy = arr2.clone();
             System.out.println(Arrays.toString(merge(arr,arr.length,arr2,arr2.length)));
-            System.out.println(Arrays.toString(merge(arrCopy,arrCopy.length,arr2Copy,arr2Copy.length)));
+            System.out.println(Arrays.toString(merge2(arrCopy,arrCopy.length,arr2Copy,arr2Copy.length)));
 
 
         }

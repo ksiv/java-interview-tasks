@@ -15,7 +15,7 @@ import java.util.Arrays;
  *
  */
 
-public class binarysearch {
+public class searchbinary {
 
 
 

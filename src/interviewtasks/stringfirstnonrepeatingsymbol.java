@@ -12,7 +12,7 @@ import java.util.*;
  * TAGS: #strings
  *
  */
-public class firstnonrepeatingsymbol {
+public class stringfirstnonrepeatingsymbol {
 
     public static void main(String[] args) {
         String helpMessage = "one strings is expected as a parameter e.g. \"abcdddfeqwertttty\"";

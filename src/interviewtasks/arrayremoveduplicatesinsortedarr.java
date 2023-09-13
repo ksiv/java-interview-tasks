@@ -12,7 +12,7 @@ import java.util.Arrays;
  * TAGS: #array
  */
 
-public class removeduplicatesinsortedarray {
+public class arrayremoveduplicatesinsortedarr {
     public static int[] removeDuplicates(int[] nums) {
         int i=0; // pointer where to put next increasing number
         int j=1; // pointer searches for next increasing number

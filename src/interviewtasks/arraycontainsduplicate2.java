@@ -1,6 +1,5 @@
 package interviewtasks;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,7 +11,7 @@ import java.util.Map;
  * TAGS: #non-ordered-array
  */
 
-public class containsduplicate2 {
+public class arraycontainsduplicate2 {
     public static boolean containsNearbyDuplicate(int[] nums, int k) {
         int n = nums.length;
         Map<Integer, Integer> map = new HashMap<>();

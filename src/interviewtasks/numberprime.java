@@ -10,7 +10,7 @@ package interviewtasks;
 
 import static interviewtasks.paramchecker.isStringLongValue;
 
-public class primenumbercheck {
+public class numberprime {
     static long numberToCheck = 0;
 
     public static void main(String[] args) {
