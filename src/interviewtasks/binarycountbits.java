@@ -1,10 +1,9 @@
 package interviewtasks;
 
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
-import static interviewtasks.paramchecker.isStringIntegerValue;
+import static interviewtasks.lib.paramhelper.isStringIntegerValue;
 
 public class binarycountbits {
 

@@ -2,7 +2,7 @@ package interviewtasks;
 
 import java.util.Arrays;
 import static interviewtasks.lib.linkedlist.*;
-import static interviewtasks.paramchecker.stringArrayToIntArray;
+import static interviewtasks.lib.paramhelper.intArrayFromStringArray;
 
 public class listreverselinkedlist {
     /**
@@ -76,7 +76,7 @@ public class listreverselinkedlist {
         } else {
             // arg handling
             String[] stringArray = args[0].split(",");
-            int[] arr = stringArrayToIntArray(stringArray);
+            int[] arr = intArrayFromStringArray(stringArray);
             System.out.println("before: " + Arrays.toString(arr));
             ListNode head = linkedListFromIntArray(arr);
 

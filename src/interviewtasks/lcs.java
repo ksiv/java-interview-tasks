@@ -26,8 +26,8 @@ public class lcs {
             int s2length = str2.length();
             System.out.println(str1 + " - " + str2);
 
-            Long start;
-            Long stop;
+            long start;
+            long stop;
 
             start = System.nanoTime();
             System.out.println("Length of LCS(memoization) is " + lcsMemoization(str1, str2));
@@ -109,8 +109,18 @@ public class lcs {
             return Math.max(lcsRecursive(s1, s2, s1pointer, s2pointer - 1), lcsRecursive(s1, s2, s1pointer - 1, s2pointer));
     }
 
-    // my implementation
-    // @ksiv
+    /* my implementation via lcs
+     * 1. map all symbol positions
+     * 2. build pairs
+     * a1-b -c3
+     * ↓  ↘  ↓
+     * a1-a2-c3
+     *
+     * 3. Run LCS for resulted pairs {a1,a1},{a1,a2},{c3,c3}
+     *
+     *
+     * @ksiv
+     */
     public static int my_lcs(String s1, String s2) {
         int retVal = 0;
         Map<Character, ArrayList<Integer>> positionMap1 = new HashMap<>();

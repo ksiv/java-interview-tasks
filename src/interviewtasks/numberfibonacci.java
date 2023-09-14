@@ -1,6 +1,6 @@
 package interviewtasks;
 
-import static interviewtasks.paramchecker.isStringIntegerValue;
+import static interviewtasks.lib.paramhelper.isStringIntegerValue;
 
 /**
  *  Java program to calculate so-called "Fibonachi" sequence

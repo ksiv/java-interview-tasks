@@ -1,7 +1,7 @@
 package interviewtasks;
 
 import static interviewtasks.lib.linkedlist.*;
-import static interviewtasks.paramchecker.*;
+import static interviewtasks.lib.paramhelper.*;
 
 /**
  * leetcode 21. Merge Two Sorted Lists
@@ -82,9 +82,9 @@ public class listmergetwosortedlists {
         } else {
             // arg handling
             String[] stringArray = args[0].split(",");
-            int[] arrInt = stringArrayToIntArray(stringArray);
+            int[] arrInt = intArrayFromStringArray(stringArray);
             String[] stringArray2 = args[1].split(",");
-            int[] arrInt2 = stringArrayToIntArray(stringArray2);
+            int[] arrInt2 = intArrayFromStringArray(stringArray2);
 
             ListNode head1 = linkedListFromIntArray(arrInt);
 

@@ -2,7 +2,7 @@ package interviewtasks;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-
+import static interviewtasks.lib.paramhelper.*;
 public class intervalmerge {
 
     /**
@@ -32,7 +32,6 @@ public class intervalmerge {
                 i++;
                 if (intervals.length == i) {
                     i--;
-                    continue;
                 }
 
             }
@@ -43,19 +42,16 @@ public class intervalmerge {
     }
 
     public static void main(String[] args) {
-        String helpMessage = "Comma separated non-decreasing two-member arrays \"2,2\" \"3,5\" are expected as input";
+        String helpMessage = "Comma separated non-decreasing two-member arrays \"2,2\" \"3,5\" \"4,8\" are expected as input";
         if (args.length < 1) {
             System.out.println("wrong argument count");
             System.out.println(helpMessage);
-            return;
+
         } else {
-            ArrayList<int[]> al = new ArrayList();
-            for (int i = 0; i < args.length; i++) {
-                String[] stringArray = args[i].split(",");
-                int[] intArray = new int[stringArray.length];
-                for (int k = 0; k < stringArray.length; k++) {
-                    intArray[k] = Integer.parseInt(stringArray[k]);
-                }
+            ArrayList<int[]> al = new ArrayList<>();
+            for (String arg : args) {
+                String[] stringArray = arg.split(",");
+                int[] intArray = intArrayFromStringArray(stringArray);
                 al.add(intArray);
             }
 

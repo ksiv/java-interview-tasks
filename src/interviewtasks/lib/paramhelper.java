@@ -1,7 +1,7 @@
-package interviewtasks;
+package interviewtasks.lib;
 
 
-public class paramchecker {
+public class paramhelper {
     public static boolean isStringIntegerValue(String str){
         try {
             Integer.parseInt(str);
@@ -18,7 +18,7 @@ public class paramchecker {
         }
         return true;
     }
-    public static int[] stringArrayToIntArray(String[] stringArray){
+    public static int[] intArrayFromStringArray(String[] stringArray){
         int [] arr = new int [stringArray.length];
         for (int i=0;i<stringArray.length;i++) {
             arr[i] = Integer.parseInt(stringArray[i]);

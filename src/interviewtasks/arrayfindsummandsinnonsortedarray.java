@@ -3,6 +3,7 @@ package interviewtasks;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import static interviewtasks.lib.paramhelper.*;
 
 /**
  * leetcode.com 1. Two Sum
@@ -38,14 +39,11 @@ public class arrayfindsummandsinnonsortedarray {
         if (args.length != 2) {
             System.out.println("wrong argument count");
             System.out.println(helpMessage);
-            return;
+
         } else {
             int sum = Integer.parseInt(args[1]);
             String[] stringArray = args[0].split(",");
-            int[] intArray = new int[stringArray.length];
-            for (int i = 0; i < stringArray.length; i++) {
-                intArray[i] = Integer.parseInt(stringArray[i]);
-            }
+            int[] intArray = intArrayFromStringArray(stringArray);
 
             System.out.println(Arrays.toString(twoSum(intArray, sum)));
         }

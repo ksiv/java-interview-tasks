@@ -2,7 +2,7 @@ package interviewtasks;
 
 import java.util.*;
 import static interviewtasks.lib.linkedlist.*;
-import static interviewtasks.paramchecker.*;
+import static interviewtasks.lib.paramhelper.*;
 /**
  * leetcode 148. Sort List
  * Given the head of a linked list, return the list after sorting it in ascending order.
@@ -112,7 +112,7 @@ public class listsort {
             if (head == null || head.next == null){
                 return head;
             }
-            Boolean swapDone = true;
+            boolean swapDone = true;
             while (swapDone) {
                 swapDone = false;
                 ListNode prevNode = null;
@@ -167,16 +167,16 @@ public class listsort {
 
         void countSort(ArrayList<NodeInfo> arr) {
             int arrSize = arr.size();
-            NodeInfo output[] = new NodeInfo[arrSize];
+            NodeInfo[] output = new NodeInfo[arrSize];
 
             // Create a frequency map for all numbers from min to max
             // number and initialize counters  as 0
             Map<Integer, Integer> frequencyMap = new HashMap<Integer, Integer>();
             int min = 0;
             int max = 0;
-            for (int i = 0; i < arrSize; i++) {
-                max = Math.max(max, arr.get(i).value);
-                min = Math.min(min, arr.get(i).value);
+            for (NodeInfo nodeInfo : arr) {
+                max = Math.max(max, nodeInfo.value);
+                min = Math.min(min, nodeInfo.value);
             }
             for (int i = min; i <= max; ++i) {
                 frequencyMap.put(i, 0);
@@ -210,8 +210,7 @@ public class listsort {
             // Copy the output array to arr, so that arr now
             // contains sorted characters
             arr.clear();
-            for (NodeInfo i : output)
-                arr.add(i);
+            Collections.addAll(arr, output);
 
         }
 
@@ -236,13 +235,13 @@ public class listsort {
             // Fix link for every prev node
             ListNode prev = null;
 
-            for (int i = 0; i < counter; i++) {
+            for (NodeInfo nodeInfo : al) {
                 if (prev != null) {
-                    prev.next = al.get(i).node;
-                    prev = al.get(i).node;
+                    prev.next = nodeInfo.node;
+                    prev = nodeInfo.node;
 
                 } else {
-                    prev = al.get(i).node;
+                    prev = nodeInfo.node;
                 }
             }
             // Fix last.next to null
@@ -319,7 +318,7 @@ public class listsort {
         } else {
             // arg handling
             String[] stringArray = args[0].split(",");
-            int[] arrInt = stringArrayToIntArray(stringArray);
+            int[] arrInt = intArrayFromStringArray(stringArray);
 
 
             ListNode head = linkedListFromIntArray(arrInt);

@@ -2,7 +2,7 @@ package interviewtasks;
 
 import java.util.Arrays;
 import java.util.HashMap;
-
+import static interviewtasks.lib.paramhelper.*;
 public class majorityelement {
     /**
      * leetcode.com
@@ -47,10 +47,7 @@ public class majorityelement {
             return;
         } else {
             String[] stringArray = args[0].split(",");
-            int[] intArray = new int[stringArray.length];
-            for (int i = 0; i < stringArray.length; i++) {
-                intArray[i] = Integer.parseInt(stringArray[i]);
-            }
+            int[] intArray = intArrayFromStringArray(stringArray);
             System.out.println("getFrequencyMap "+getFrequencyMap(intArray));
             System.out.println("getViaSort "+getViaSort(intArray));
         }
