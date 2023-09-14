@@ -3,6 +3,7 @@ package interviewtasks;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import static interviewtasks.lib.paramhelper.*;
 
 public class lis {
     /**
@@ -85,12 +86,7 @@ public class lis {
 
         }
         String[] strings = args[0].split(",");
-        int[] intArr = new int[strings.length];
-
-        for (int i = 0; i < strings.length; i++) {
-
-            intArr[i] = Integer.parseInt(strings[i]);
-        }
+        int[] intArr = intArrayFromStringArray(strings);
 
 
         System.out.println("lis length: " + getLISlength(intArr));

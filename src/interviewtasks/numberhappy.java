@@ -3,8 +3,6 @@ package interviewtasks;
 import java.util.HashSet;
 import java.util.Set;
 
-import static interviewtasks.paramchecker.isStringIntegerValue;
-
 public class numberhappy {
 
     /**

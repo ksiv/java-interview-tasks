@@ -2,7 +2,7 @@ package interviewtasks;
 
 import java.util.Arrays;
 
-import static interviewtasks.paramchecker.stringArrayToIntArray;
+import static interviewtasks.lib.paramhelper.intArrayFromStringArray;
 
 public class arraymerge {
     /**
@@ -38,13 +38,13 @@ public class arraymerge {
         if (args.length != 2) {
             System.out.println("wrong argument count");
             System.out.println(helpMessage);
-            return;
+
         } else {
             // arg handling
             String[] stringArray = args[0].split(",");
-            int [] arr = stringArrayToIntArray(stringArray);
+            int [] arr = intArrayFromStringArray(stringArray);
             String[] stringArray2 = args[1].split(",");
-            int [] arr2 = stringArrayToIntArray(stringArray2);
+            int [] arr2 = intArrayFromStringArray(stringArray2);
             int[] arrCopy = arr.clone();
             int[] arr2Copy = arr2.clone();
             System.out.println(Arrays.toString(merge(arr,arr.length,arr2,arr2.length)));

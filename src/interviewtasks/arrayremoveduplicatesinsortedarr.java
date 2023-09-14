@@ -2,7 +2,7 @@ package interviewtasks;
 
 
 import java.util.Arrays;
-import static interviewtasks.paramchecker.stringArrayToIntArray;
+import static interviewtasks.lib.paramhelper.intArrayFromStringArray;
 
 
 /**
@@ -81,7 +81,7 @@ public class arrayremoveduplicatesinsortedarr {
             return;
         } else {
             String[] stringArray = args[0].split(",");
-            int[] intArray = stringArrayToIntArray(stringArray);
+            int[] intArray = intArrayFromStringArray(stringArray);
             int[] copy = intArray.clone();
             System.out.println(Arrays.toString(intArray));
             System.out.println("removeDuplicates "+Arrays.toString(removeDuplicates(intArray)));

@@ -8,7 +8,7 @@ package interviewtasks;
  */
 
 
-import static interviewtasks.paramchecker.isStringLongValue;
+import static interviewtasks.lib.paramhelper.isStringLongValue;
 
 public class numberprime {
     static long numberToCheck = 0;

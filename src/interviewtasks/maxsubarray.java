@@ -1,5 +1,5 @@
 package interviewtasks;
-
+import static interviewtasks.lib.paramhelper.*;
 /**
  * leetcode.com
  * 121. Best Time to Buy and Sell Stock
@@ -38,19 +38,17 @@ public class maxsubarray {
         }
         return maxVal;
     }
-    // TODO Kadane's algorithm
+    // Kadane's algorithm in separate file
     public static void main(String[] args) {
         String helpMessage = "Comma separated array \"1,3,1,4,2,3\" is expected as input";
         if (args.length != 1) {
             System.out.println("wrong argument count");
             System.out.println(helpMessage);
-            return;
+
         } else {
             String[] stringArray = args[0].split(",");
-            int[] intArray = new int[stringArray.length];
-            for (int i = 0; i < stringArray.length; i++) {
-                intArray[i] = Integer.parseInt(stringArray[i]);
-            }
+            int[] intArray = intArrayFromStringArray(stringArray);
+            System.out.println(maxProfit(intArray));
             System.out.println(maxProfit2(intArray));
 
         }

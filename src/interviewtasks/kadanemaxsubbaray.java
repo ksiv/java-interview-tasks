@@ -1,6 +1,6 @@
 package interviewtasks;
 
-import static interviewtasks.paramchecker.*;
+import static interviewtasks.lib.paramhelper.*;
 /**
  *  leetcode 53. Maximum Subarray
  *  Given an integer array nums, find the subarray with the largest sum, and return its sum.
@@ -35,7 +35,7 @@ public class kadanemaxsubbaray {
             System.out.println(helpMessage);
         } else {
             String[] stringArray = args[0].split(",");
-            int[] intArray = stringArrayToIntArray(stringArray);
+            int[] intArray = intArrayFromStringArray(stringArray);
             System.out.println(new Solution().maxSubArray(intArray));
 
         }

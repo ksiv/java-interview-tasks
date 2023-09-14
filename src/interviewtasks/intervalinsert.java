@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static interviewtasks.lib.paramhelper.*;
+
 
 public class intervalinsert {
 
     /**
      * leetcode 57. Insert Interval
-     * You are given an array of non-overlapping intervals intervals where intervals[i] = [starti, endi] represent the start and the end of the ith interval and intervals is sorted in ascending order by starti. You are also given an interval newInterval = [start, end] that represents the start and end of another interval.
+     * You are given an array of non-overlapping intervals intervals where intervals[i] = [starti, endi] represent the start and the end of the ith interval and intervals is sorted in ascending order by start i.
+     * You are also given an interval newInterval = [start, end] that represents the start and end of another interval.
      * <p>
      * Insert newInterval into intervals such that intervals is still sorted in ascending order by starti and intervals still does not have any overlapping intervals (merge overlapping intervals if necessary).
      * <p>
@@ -141,7 +144,7 @@ public class intervalinsert {
 
 
     public static void main(String[] args) {
-        String helpMessage = "Comma separated non-decreasing two-member arrays \"2,2\" \"3,5\" are expected as input. last array is the member to add";
+        String helpMessage = "Comma separated non-decreasing two-member arrays \"2,2\" \"4,8\" \"3,5\" are expected as input. last array is the member to add";
         if (args.length < 1) {
             System.out.println("wrong argument count");
             System.out.println(helpMessage);
@@ -154,13 +157,10 @@ public class intervalinsert {
                 intArrays[i]=intArray;
             }
             String[] stringArray = args[args.length-1].split(",");
-            int[] intArrayNew = new int[2];
-            for (int k = 0; k < stringArray.length; k++) {
-                intArrayNew[k] = Integer.parseInt(stringArray[k]);
-            }
+            int[] intArrayNew = intArrayFromStringArray(stringArray);
             System.out.println(Arrays.deepToString(intArrays));
-            System.out.println("1" + Arrays.deepToString(new Solution().insert(intArrays, intArrayNew)));
-            System.out.println("2" + Arrays.deepToString(new Solution2().insert(intArrays, intArrayNew)));
+            System.out.println("Solution1" + Arrays.deepToString(new Solution().insert(intArrays, intArrayNew)));
+            System.out.println("Solution2" + Arrays.deepToString(new Solution2().insert(intArrays, intArrayNew)));
         }
 
       }

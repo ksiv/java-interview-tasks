@@ -2,7 +2,7 @@ package interviewtasks;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-
+import static interviewtasks.lib.paramhelper.*;
 
 /**
  * Given an array of integers nums and an integer target, return indices of pairs of numbers such that they add up to target.
@@ -43,7 +43,7 @@ public class arrayfindsummands {
      */
 
     // two pointers binary search
-    public static int[] twoSum(int[] numbers, int target) {
+    public static int[] getSummandsPos(int[] numbers, int target) {
 
         Arrays.sort(numbers);
         int secondSummand;
@@ -58,7 +58,17 @@ public class arrayfindsummands {
             int summandCandidatePos = Arrays.binarySearch(numbers, 0,size, secondSummand);
 
             // custom binary search to move search pointer
-            // based on the logic of Arrays.binarySearch return value
+            // based on the logic of Arrays.binarySearch return value:
+            /*
+            * "The insertion point is defined as the point at which the key would be inserted into the array:
+            * the index of the first element in the range greater than the key,
+            * or toIndex if all elements in the range are less than the specified key"
+            * Arrays.binarySearch will return different negative numbers
+             */
+            // case A returnValue < array.size
+            // case B returnValue <
+            // It is same two pointers approach with same logic but instead of moving pointer one unit at a time
+            // we try to move it in binary search way
             if (summandCandidatePos < 0 ){
                 if (-summandCandidatePos>=size){
                     i=i+((size-i)/2)-1;
@@ -69,6 +79,8 @@ public class arrayfindsummands {
 
 
             // value found
+            // Additional check for next and previous value in case summands are the same number
+            // and binarySearch has found the position the first member.
             if (summandCandidatePos >= 0) {
                 // second summand found
                 if (summandCandidatePos != i) {
@@ -77,7 +89,7 @@ public class arrayfindsummands {
                     break;
                 }
                 // pointer to the first summand means summands are equal checking previous one
-                if (summandCandidatePos<0 && numbers[summandCandidatePos - 1] == secondSummand ) {
+                if (numbers[summandCandidatePos - 1] == secondSummand ) {
                     retVal[0] = i + 1;
                     retVal[1] = summandCandidatePos;
                     break;
@@ -95,12 +107,16 @@ public class arrayfindsummands {
         Arrays.sort(retVal);
         return retVal;
 
-
-
     }
 
+    /*
+    * Two pointers solution
+    * pointers walk from each end
+    * if sum of two pointers values are bigger than target right (bigger side) pointer moves
+    * else left (smaller side) one moves
+    */
     public int[] findSummandsInArrayTwoPointers(int[] numbers, int target) {
-        int retVal[]=new int[2];
+        int[] retVal =new int[2];
         int i=0;
         int j=numbers.length-1;
         while(i!=j){
@@ -124,18 +140,15 @@ public class arrayfindsummands {
         if (args.length != 2) {
             System.out.println("wrong argument count");
             System.out.println(helpMessage);
-            return;
+
         } else {
             String[] stringArray = args[0].split(",");
-            int[] intArray = new int[stringArray.length];
-            for (int i = 0; i < stringArray.length; i++) {
-                intArray[i] = Integer.parseInt(stringArray[i]);
-            }
+            int[] intArray = intArrayFromStringArray(stringArray);
             int sum = Integer.parseInt(args[1]);
             System.out.println("Input: " + Arrays.toString(intArray) + ", possible sum:" + sum);
             ArrayList<int[]> returnArray = getPairsOfSummands(intArray, sum);
-            System.out.println("Output: " + Arrays.deepToString(returnArray.toArray()));
-            System.out.println(Arrays.toString(twoSum(intArray,sum)));
+            System.out.println("Summands: " + Arrays.deepToString(returnArray.toArray()));
+            System.out.println("Summands positions: "+Arrays.toString(getSummandsPos(intArray,sum)));
         }
 
     }

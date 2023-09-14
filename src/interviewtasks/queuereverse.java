@@ -18,7 +18,6 @@ public class queuereverse {
         if (args.length != 1) {
             System.out.println("wrong argument count");
             System.out.println(helpMessage);
-            return;
         } else {
             // arg handling
             String[] stringArray = args[0].split(",");
@@ -28,16 +27,16 @@ public class queuereverse {
                 q.add(Integer.parseInt(stringArray[i]));
 
             }
-            queuereverse r = new queuereverse();
+
 
             System.out.println("before: " + q);
-            r.rev(q);
+            new queuereverse().rev(q);
             System.out.println("after : " + q);
 
         }
     }
 
-
+    // recursion storage in call-stack
     public Queue<Integer> rev(Queue<Integer> q) {
 
 

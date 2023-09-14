@@ -13,7 +13,7 @@ import java.util.*;
  * Every close bracket has a corresponding open bracket of the same type.
  *
  */
-public class parenthesis {
+public class stackparenthesis {
     static class Solution {
         public boolean isValid(String s) {
             Map<Character, Character> map = new HashMap<>();
