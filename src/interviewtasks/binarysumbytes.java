@@ -2,7 +2,7 @@ package interviewtasks;
 
 import java.util.Locale;
 
-public class binaryaddbyte {
+public class binarysumbytes {
     /**
      * leetcode 67. Add Binary
      * Given two binary strings a and b, return their sum as a binary string.
