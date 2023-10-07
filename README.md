@@ -47,7 +47,7 @@ If you a Java developer you might find this issue a fun one, please take pity on
 we in test have to add test execution command line somewhere (Jenkins for example) but it not as often as for those who debug their app all day long.
 Win 11 command line example<br> 
 
-> /interviewtasks> java -classpath ".." interviewtasks.fibonacci 4
+> /interviewtasks> java -classpath ".." interviewtasks.numberfibonacci 4
 
 ## Which task practicing sites I use
 leetcode.com
