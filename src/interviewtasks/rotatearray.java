@@ -1,6 +1,7 @@
 package interviewtasks;
 
 import java.util.Arrays;
+import static interviewtasks.lib.paramhelper.intArrayFromStringArray;
 
 /**
  * leetcode.com
@@ -49,13 +50,11 @@ public class rotatearray {
         if (args.length != 2) {
             System.out.println("wrong argument count");
             System.out.println(helpMessage);
-            return;
         } else {
             String[] stringArray = args[0].split(",");
-            int[] intArray = new int[stringArray.length];
-            for (int i = 0; i < stringArray.length; i++) {
-                intArray[i] = Integer.parseInt(stringArray[i]);
-            }
+            int[] intArray;
+            intArray = intArrayFromStringArray(stringArray);
+
             int k = Integer.parseInt(args[1]);
             System.out.println(Arrays.toString(intArray));
             System.out.println("rotateLoop     : " + Arrays.toString(rotateLoop(intArray, k)));

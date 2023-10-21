@@ -2,6 +2,16 @@ package interviewtasks;
 
 import java.util.Arrays;
 
+import static interviewtasks.lib.paramhelper.intArrayFromStringArray;
+
+/**
+ * leetcode 66 plus one
+ * You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
+ *
+ * Increment the large integer by one and return the resulting array of digits.
+ *
+ *
+ */
 public class numberaddonedecimal
 {
     // BrutForce
@@ -34,6 +44,14 @@ public class numberaddonedecimal
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(new Solution().plusOne(new int[]{9,9,9})));
+        String helpMessage = "Comma separated array \"1,2,3\" is expected as input";
+        if (args.length != 1) {
+            System.out.println("wrong argument count");
+            System.out.println(helpMessage);
+        } else {
+            String[] stringArray = args[0].split(",");
+            int[] intArray = intArrayFromStringArray(stringArray);
+            System.out.println(Arrays.toString(Solution.plusOne(intArray)));
+        }
     }
 }
