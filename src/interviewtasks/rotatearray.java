@@ -52,8 +52,7 @@ public class rotatearray {
             System.out.println(helpMessage);
         } else {
             String[] stringArray = args[0].split(",");
-            int[] intArray;
-            intArray = intArrayFromStringArray(stringArray);
+            int[] intArray = intArrayFromStringArray(stringArray);
 
             int k = Integer.parseInt(args[1]);
             System.out.println(Arrays.toString(intArray));
