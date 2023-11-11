@@ -12,7 +12,7 @@ Every example is a wrapper class which contains all the target logic with minima
 
 So far, I see three types of tasks:<br>
 1. a naive approach to solve the tasks and at least one "improvement" where improvement is supposed to work better in (some/all) cases. This type of task shows some approach to solve a problem and why it's better than the other and that in general why we should seek for different approaches to same problem. 
-2. implement "a" without using "b". In such task you are to implement some solution without using some method or data structure. This task forces you to find the other approach to solve same problem. The approach you have found is not always an improvement in terms of efficiency  but it might have some uses depending on an exact PL and it's limitations.
+2. implement "a" without using "b". In such task you are to implement some solution without using some method or data structure. This task forces you to find another approach to solve the same problem. The approach you have found is not always an improvement in terms of efficiency  but it might have some uses depending on an exact PL and it's limitations.
 3. Just implement something. Such task often imply one solution and the whole idea is to learn or demonstrate the knowledge of some algorithm and your ability to utilize given PL to use this algorithm.
 
 
